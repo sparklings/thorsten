@@ -1,0 +1,37 @@
+{{define "title"}}Home{{end}}
+
+{{define "content"}}
+<section>
+    <h2>Welcome to Thorsten</h2>
+    <p>Go 언어 기본 패키지로 구축된 웹 애플리케이션입니다.</p>
+    <p>현재 시간: {{.CurrentTime}}</p>
+    <div id="api-status" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        API 상태 점검 중...
+    </div>
+</section>
+
+<script>
+    window.onload = function () {
+        fetch('/api/health')
+            .then(response => response.json())
+            .then(data => {
+                const statusDiv = document.getElementById('api-status');
+                if (data.status === 'ok') {
+                    statusDiv.innerHTML = '✅ API 연결 성공: ' + data.message;
+                    statusDiv.style.borderColor = 'green';
+                    statusDiv.style.color = 'green';
+                } else {
+                    statusDiv.innerHTML = '❌ API 응답 오류: ' + JSON.stringify(data);
+                    statusDiv.style.borderColor = 'red';
+                    statusDiv.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                const statusDiv = document.getElementById('api-status');
+                statusDiv.innerHTML = '⚠️ API 연결 실패: ' + error;
+                statusDiv.style.borderColor = 'red';
+                statusDiv.style.color = 'red';
+            });
+    };
+</script>
+{{end}}
