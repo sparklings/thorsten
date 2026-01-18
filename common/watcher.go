@@ -1,4 +1,4 @@
-package batch
+package common
 
 import (
 	"log"
@@ -140,7 +140,7 @@ func scanFiles(root string, modTimes map[string]time.Time, mu *sync.Mutex) {
 			return nil
 		}
 		// 감시 제외 대상
-		if info.IsDir() && (info.Name() == ".git" || info.Name() == "assets" || info.Name() == "tmp" || info.Name() == "batch") {
+		if info.IsDir() && (info.Name() == ".git" || info.Name() == "assets" || info.Name() == "tmp" || info.Name() == "common") {
 			return filepath.SkipDir
 		}
 		// 감시 대상 확장자
@@ -162,7 +162,7 @@ func hasChanges(root string, lastModTimes map[string]time.Time, mu *sync.Mutex) 
 		if err != nil {
 			return nil 
 		}
-		if info.IsDir() && (info.Name() == ".git" || info.Name() == "assets" || info.Name() == "tmp" || info.Name() == "batch") {
+		if info.IsDir() && (info.Name() == ".git" || info.Name() == "assets" || info.Name() == "tmp" || info.Name() == "common") {
 			return filepath.SkipDir
 		}
 		

@@ -38,8 +38,7 @@ func NewHandler() http.Handler {
 	return mux
 }
 
-// LoggingMiddleware 등 공통 미들웨어가 있다면 여기에 위치할 수 있습니다.
-// 현재는 main.go에 구현되어 있지만, handlers 패키지로 옮겨오는 것도 고려할 수 있습니다.
+
 func LoggingMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()

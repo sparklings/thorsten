@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"thorsten/batch"
+	"thorsten/common"
 	"thorsten/handlers"
 )
 
@@ -20,7 +20,7 @@ func main() {
 
 	// Watch 모드일 경우 감시자 로직 실행
 	if *watch {
-		batch.RunWatcher()
+		common.RunWatcher()
 		return
 	}
 

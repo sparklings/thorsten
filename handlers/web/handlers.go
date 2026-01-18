@@ -19,7 +19,7 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	// 실제 운영 환경에서는 절대 경로를 설정하거나 embed 패키지를 사용하는 것이 좋습니다.
 	files := []string{
 		filepath.Join("views", "layout.html"),
-		filepath.Join("views", "index.html"),
+		filepath.Join("views", "home.html"),
 	}
 
 	// 템플릿 파싱

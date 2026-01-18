@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-// NewWebHandler는 웹 페이지 관련 라우우팅을 설정하여 반환합니다.
+// NewWebHandler는 웹 페이지 관련 라우팅을 설정하여 반환합니다.
 func NewWebHandler() http.Handler {
 	mux := http.NewServeMux()
 
