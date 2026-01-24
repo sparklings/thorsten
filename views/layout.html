@@ -5,41 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{template "title" .}} - Thorsten</title>
-    <!-- Bootstrap CSS -->
+    <title>Thorsten - {{template "title" .}}</title>
     <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/vendors/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/assets/app/css/style.css">
+    <link rel="icon" href="/assets/vendors/bootstrap-icons-1.13.1/calendar3-week.svg" type="image/svg+xml">
 </head>
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-            <div class="container">
-                <a class="navbar-brand" href="/">Thorsten</a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container">
-            <h1>Thorsten Web App</h1>
-        </div>
-    </header>
-
-    <main class="container">
-        {{template "content" .}}
-    </main>
-
-    <footer class="container mt-5 py-3 border-top">
-        <p class="text-center text-muted">&copy; 2026 Thorsten Project</p>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
+{{template "content" .}}
 
 </html>
 {{end}}
